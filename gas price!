@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <math.h>
+
+void fuel(char type, double liters) 
+{
+    double value;
+    if (type == 'G'){ 
+            if (liters<=20) { //gasoline
+            value = (2.50 - 2.50*0.04)*liters; 
+            }
+
+            else if (liters>20) {
+            value =(2.50 - 2.50*0.06)*liters;
+            }
+}
+    if (type== 'A') { // alcohol 
+        if (liters<=20){
+            value =(1.90 - 1.90*0.03)*liters;
+            }
+        else if (liters>20){
+            value =(1.90 - 1.90*0.05)*liters;
+            }
+}
+     if (type=='D') { //diesel
+        
+        if (liters<=25){
+           value =1.66 * liters;
+    }
+        else if (liters>25){
+            value =(1.66- 1.66*0.04)*liters;
+    }
+ }
+        printf("$ %.2lf\n",value);
+}
+
+int main (){
+    char type;
+    double liters;
+    scanf("%lf %c",&liters, &type);
+    fuel(type,liters); 
+
+    return 0; 
+}
