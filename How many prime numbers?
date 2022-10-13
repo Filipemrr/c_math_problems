@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <math.h>
+
+int prime (int number, int i) 
+{
+    if (number==i || number==2)
+    {
+        return 1; 
+    }
+    
+    if (number%i == 0 || number <= 1)
+    {
+        return 0; 
+    }
+    prime(number,i+1); 
+}
+ 
+
+void loopscan() {
+
+    int number; 
+    scanf("%d",&number); 
+   
+    if (number == -1) 
+        {
+            return; 
+        } 
+    printf ("%d\n",prime(number,2));
+    loopscan(); 
+    
+    
+}
+
+int main ()
+{ 
+    loopscan(); 
+    
+    return 0; 
+}
