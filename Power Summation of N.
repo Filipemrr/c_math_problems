@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h> 
+
+int summation(int n)
+{
+    if (n==0) //base step
+    {
+        return 0; 
+    }
+
+    else // recursive step
+    {
+        return pow(2,n) + summation(n-1); 
+    }
+}
+
+int main (){
+    int number,res; 
+    scanf ("%d", &number); 
+    res = summation(number); 
+    printf ("The summation of %d its = %d\n",number, summation(number));
+    
+
+    return 0;
+}
