@@ -1,25 +1,23 @@
 #include <stdio.h> 
 #include <math.h>
-// PROBLEM: 
-// PRINT 1 UNTIL N, ( such that N ITS A USER IMPUT)
 
-int ascending(int n) 
+void ascending(int n, int s) 
 { 
-    if (n < 1) 
+    if (n <= s) 
     {
-         return 1; 
+     printf("%d\n",n);  
     }
-        printf ("%d\n", ascending(n-1)); 
-        return n; 
+    ascending(n+1,s); 
+    
+    return;
 }
+    
 
 int main () 
 {
-    int n; 
-
-    scanf ("%d", &n);  
-
-    ascending(n+1);  
+    int n,s; 
+    scanf ("%d%d", &n,&s);  
+    ascending(n,s);  
     
 return 0; 
 }
