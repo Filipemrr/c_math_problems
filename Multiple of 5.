@@ -1,0 +1,25 @@
+#include <stdio.h> 
+#include <math.h> 
+
+void multiples(int a, int b)
+{
+ 
+    if (a<b) // function stop condition, for all  a<b,so, for  a==b or  a>b the  function stop)
+    {
+        if (a%5 == 0)
+        {
+            printf ("%d\n",a); 
+        }
+        multiples (a + 1, b); 
+    }
+}
+
+int main ()
+{
+    int a, b; 
+    scanf("%d %d", &a, &b); 
+    multiples(a,b);  // sendo o n o menor, e s o maior.  
+
+    return 0;
+}
+
