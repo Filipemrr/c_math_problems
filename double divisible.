@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <math.h> 
+//quantidade de divisores de um numero, que tambem sao divisiveis por 3
+// 1. achar quantos divisores um numero tem. 
+// 2. PRINTAR quantos desses sao divisiveis por 3.
+
+void divisors(int number, int divisor, int i)
+{    
+
+    if (divisor<1) //base step
+{ 
+    if (i>0)
+    {
+        printf("%d\n",i);
+    }
+    else if (i==0)
+    {
+        printf("O numero nao possui divisores multiplos de 3!\n");
+    }
+    return;
+}
+     if (number % divisor == 0)
+{
+        if (divisor % 3 == 0)
+        {   
+            i += 1; 
+        }
+        
+}
+    divisors(number,divisor-1,i); 
+}
+
+
+int main () 
+{
+    int number; 
+    int divisor; 
+    int i=0; 
+    scanf("%d", &number); 
+    divisor = number; 
+    divisors(number,divisor, i); 
+    return 0; 
+}
